@@ -1,0 +1,6 @@
+{
+  "name": "WortLabor — German Vocabulary Learning Lab",
+  "description": "Independent German A1 vocabulary learning lab built directly from the supplied German Vocabulary Words book, featuring full book reader, explorer, device TTS, Anki-style flashcards, written translation tests, listening practice, and local spaced repetition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

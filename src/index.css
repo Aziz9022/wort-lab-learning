@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif-de: 'Source Serif 4', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Default (Medium) readability scale matching prompt requirements */
+    --scale-heading: 32px;
+    --scale-word: 36px;
+    --scale-sentence: 24px;
+    --scale-translation: 20px;
+    --scale-body: 18px;
+    --scale-control: 16px;
+  }
+
+  [data-font-scale="sm"] {
+    --scale-heading: 26px;
+    --scale-word: 30px;
+    --scale-sentence: 20px;
+    --scale-translation: 17px;
+    --scale-body: 16px;
+    --scale-control: 15px;
+  }
+
+  [data-font-scale="md"] {
+    --scale-heading: 32px;
+    --scale-word: 36px;
+    --scale-sentence: 24px;
+    --scale-translation: 20px;
+    --scale-body: 18px;
+    --scale-control: 16px;
+  }
+
+  [data-font-scale="lg"] {
+    --scale-heading: 36px;
+    --scale-word: 40px;
+    --scale-sentence: 26px;
+    --scale-translation: 22px;
+    --scale-body: 20px;
+    --scale-control: 17px;
+  }
+
+  [data-font-scale="xl"] {
+    --scale-heading: 40px;
+    --scale-word: 44px;
+    --scale-sentence: 28px;
+    --scale-translation: 24px;
+    --scale-body: 22px;
+    --scale-control: 18px;
+  }
+
+  html {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+  }
+
+  html.dark body {
+    background-color: #0b1120;
+    color: #f1f5f9;
+  }
+}
+
+.font-serif-de {
+  font-family: var(--font-serif-de);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-scale-heading {
+  font-size: clamp(24px, 3vw, var(--scale-heading));
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.text-scale-word {
+  font-size: clamp(28px, 4vw, var(--scale-word));
+  line-height: 1.18;
+}
+
+.text-scale-sentence {
+  font-size: clamp(19px, 2.4vw, var(--scale-sentence));
+  line-height: 1.5;
+}
+
+.text-scale-translation {
+  font-size: clamp(17px, 2vw, var(--scale-translation));
+  line-height: 1.55;
+}
+
+.text-scale-body {
+  font-size: clamp(16px, 1.5vw, var(--scale-body));
+  line-height: 1.65;
+}
+
+.text-scale-control {
+  font-size: var(--scale-control);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
